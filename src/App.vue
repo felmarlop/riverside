@@ -1,7 +1,19 @@
 <template>
-  <v-app class="app">
-    <img alt="Vue logo" src="./assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+  <v-app id="inspire">
+    <v-navigation-drawer v-model="drawer">
+      <!---->
+    </v-navigation-drawer>
+
+    <v-app-bar>
+      <v-app-bar-nav-icon color="white" @click="drawer = !drawer" />
+
+      <v-toolbar-title>navasecreta</v-toolbar-title>
+    </v-app-bar>
+
+    <v-main>
+      <img alt="Vue logo" src="./assets/logo.png" />
+      <HelloWorld msg="navasecreta" />
+    </v-main>
   </v-app>
 </template>
 
@@ -12,7 +24,8 @@ export default {
   name: 'App',
   components: {
     HelloWorld
-  }
+  },
+  data: () => ({ drawer: null })
 }
 </script>
 
