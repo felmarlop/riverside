@@ -23,7 +23,8 @@ export default {
   name: 'QuoteView',
   data() {
     return {
-      quote: this.getQuote()
+      quote: this.getQuote(),
+      oldQ: null
     }
   },
   created() {
@@ -31,7 +32,12 @@ export default {
   },
   methods: {
    getQuote() {
-    return sample(QUOTES)
+    const q = sample(QUOTES)
+    if (this.oldQ?.autor == q.author) {
+      return this.getQuote()
+    }
+    this.oldQ = q
+    return q
    },
    setQuote() {
       const context = this
