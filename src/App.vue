@@ -1,10 +1,10 @@
 <template>
   <v-app>
     <init-view v-if="loading" />
-    <v-app-bar :height="$vuetify.display.mobile ? 50 : 65" color="primary" v-if="!loading">
+    <v-app-bar :height="$vuetify.display.mobile ? 50 : 75" color="primary" v-if="!loading">
       <v-row class="pl-5">
-        <v-img :src="logoEagle" max-width="35" v-if="$vuetify.display.mobile" />
-        <v-img :src="logo" max-width="350" class="logo" v-else />
+        <v-img :src="logoEagle" max-width="35" class="ml-2" v-if="$vuetify.display.mobile" />
+        <v-img :src="logo" max-width="350" class="logo ml-2" v-else />
       </v-row>
       <v-spacer />
       <v-btn icon>
@@ -18,8 +18,8 @@
 </template>
 
 <script>
-import Logo from '@/assets/img/logo.png'
 import LogoEagle from '@/assets/img/logo-eagle.png'
+import Logo from '@/assets/img/logo-transparent.png'
 import { LOADING_TIMEOUT } from '@/core/config'
 
 import HomeView from './components/HomeView.vue'
