@@ -1,31 +1,29 @@
 <template>
-  <v-app id="inspire">
-    <v-navigation-drawer v-model="drawer">
-      <!---->
-    </v-navigation-drawer>
-
-    <v-app-bar>
-      <v-app-bar-nav-icon color="white" @click="drawer = !drawer" />
-
-      <v-toolbar-title>navasecreta</v-toolbar-title>
+  <v-app>
+    <v-app-bar height="110" color="overlay">
+      <v-row class="pl-3">
+        <v-img :src="logo" max-width="500" />
+      </v-row>
     </v-app-bar>
-
-    <v-main>
-      <img alt="Vue logo" src="./assets/logo.png" />
-      <HelloWorld msg="navasecreta" />
-    </v-main>
+    <v-layout>
+      <home-view />
+    </v-layout>
   </v-app>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Logo from '@/assets/img/logo.png'
+
+import HomeView from './components/HomeView.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    HomeView
   },
-  data: () => ({ drawer: null })
+  data: () => ({ 
+    logo: Logo
+  })
 }
 </script>
 
