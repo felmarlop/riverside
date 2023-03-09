@@ -21,6 +21,7 @@ export default {
   data() {
     return {
       images: require.context('@/assets/img/media/', false).keys(),
+      oldImg: null,
       img: null
     }
   },
@@ -31,6 +32,10 @@ export default {
   methods: {
     getImageUrl() {
       const name = sample(this.images).split('/')[1]
+      if (this.oldImg == name) {
+        return this.getImageUrl()
+      }
+      this.oldImg = name
       return require(`@/assets/img/media/${name}`)
     },
     setImageUrl() {
