@@ -1,6 +1,10 @@
 <template>
   <v-container fluid class="px-0 pb-0">
-    <v-parallax :src="img" height="100%" class="align-end">
+    <v-parallax
+      :src="img"
+      height="100%"
+      :class="{ 'align-end': $vuetify.display.mobile, 'align-center': !$vuetify.display.mobile }"
+    >
       <quote-view />
     </v-parallax>
   </v-container>

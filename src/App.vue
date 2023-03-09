@@ -1,26 +1,48 @@
 <template>
   <v-app>
     <init-view v-if="loading" />
-    <v-app-bar :height="$vuetify.display.mobile ? 50 : 75" color="primary" v-if="!loading">
+    <v-app-bar :height="$vuetify.display.mobile ? 55 : 75" color="primary" v-if="!loading">
       <v-row class="pl-5">
-        <v-img :src="logoEagle" max-width="35" class="ml-2" v-if="$vuetify.display.mobile" />
-        <v-img :src="logo" max-width="350" class="logo ml-2" v-else />
+        <v-img :src="logoEagle" max-width="45" class="ml-2" v-if="$vuetify.display.mobile" />
+        <v-img :src="logo" max-width="350" class="ml-2" v-else />
       </v-row>
       <v-spacer />
       <v-btn icon>
-        <v-icon>mdi-dots-vertical</v-icon>
+        <v-icon>mdi-music-note-off</v-icon>
       </v-btn>
     </v-app-bar>
     <v-layout v-if="!loading">
       <home-view />
     </v-layout>
+    <v-footer
+      color="primary"
+      elevation="5"
+      class="font-weight-light text-overlay"
+      fluid
+      v-if="!loading"
+    >
+      <v-col class="text-center" cols="12">
+        <span>Galería de imágenes de Las Navas de la Concepción (Sevilla)</span>
+        <br />
+        <span>
+          {{ title }} &copy; {{ new Date().getFullYear() }} -
+          <a
+            href="https://www.linkedin.com/in/f%C3%A9lix-mart%C3%ADn-866245b9/"
+            class="text-overlay"
+            target="_blank"
+          >
+            &#64; Félix Martín
+          </a>
+        </span>
+      </v-col>
+    </v-footer>
   </v-app>
 </template>
 
 <script>
 import LogoEagle from '@/assets/img/logo-eagle.png'
 import Logo from '@/assets/img/logo-transparent.png'
-import { LOADING_TIMEOUT } from '@/core/config'
+import { APP_TITLE, LOADING_TIMEOUT } from '@/core/config'
 
 import HomeView from './components/HomeView.vue'
 import InitView from './components/InitView.vue'
@@ -34,7 +56,8 @@ export default {
   data: () => ({ 
     loading: true,
     logo: Logo,
-    logoEagle: LogoEagle
+    logoEagle: LogoEagle,
+    title: APP_TITLE
   }),
   created() {
     const context = this
@@ -52,7 +75,18 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
 }
-#app .logo {
-  border-radius: 20px;
+#app .logo-rounded {
+  border-radius: 0 20px 20px 0;
+}
+#app footer {
+  font-size: 11px;
+  max-height: 80px !important;
+}
+#app .mobile {
+  font-size: 8px !important;
+}
+#app footer a {
+  text-decoration: none;
+  font-weight: bold;
 }
 </style>

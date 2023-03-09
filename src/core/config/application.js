@@ -1,4 +1,8 @@
-//const {} = process.env
+const {
+  VUE_APP_TITLE = ''
+} = process.env
+
+const APP_TITLE = VUE_APP_TITLE
 
 const QUOTES = [
   {
@@ -46,4 +50,4 @@ const QUOTES = [
 const INTERVAL_TIME = 10000
 const LOADING_TIMEOUT = 5000
 
-export { INTERVAL_TIME, LOADING_TIMEOUT, QUOTES }
+export { APP_TITLE, INTERVAL_TIME, LOADING_TIMEOUT, QUOTES }

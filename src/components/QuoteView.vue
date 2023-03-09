@@ -1,6 +1,5 @@
 <template>
-  <v-row>
-    <v-spacer />
+  <v-row class="justify-center">
     <v-col :cols="$vuetify.display.mobile ? 12 : 6">
       <v-card class="quote text-white mb-5 mx-5 px-5 pt-5 pb-5 font-weight-regular" :class="{ 'text-h6': !$vuetify.display.mobile }" v-if="quote">
         <p class="font-weight-regular mb-4">
@@ -54,11 +53,7 @@ export default {
 
 <style>
 #app .quote {
-  font-size: 14px;
   background: rgb(var(--v-theme-secondary)); background: rgba(var(--v-theme-secondary), 0.8);
-  position: fixed;
-  bottom: 0;
-  right: 0;
   border-radius: 10px;
   -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
   -moz-animation: fadein 2s; /* Firefox < 16 */
