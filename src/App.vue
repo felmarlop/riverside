@@ -8,17 +8,20 @@
       </v-row>
       <v-spacer />
       <v-btn icon>
-        <v-icon>mdi-music-note-off</v-icon>
+        <v-icon @click="showQuote = !showQuote">
+          {{ showQuote ? 'mdi-message-bulleted' : 'mdi-message-bulleted-off' }}
+        </v-icon>
       </v-btn>
     </v-app-bar>
     <v-layout v-if="!loading">
-      <home-view />
+      <home-view :show-quote="showQuote" />
     </v-layout>
     <v-footer
       color="primary"
       elevation="5"
       class="font-weight-light text-overlay"
-      fluid
+      flat
+      tile
       v-if="!loading"
     >
       <v-col class="text-center" cols="12">
@@ -57,6 +60,7 @@ export default {
     loading: true,
     logo: Logo,
     logoEagle: LogoEagle,
+    showQuote: true,
     title: APP_TITLE
   }),
   created() {
@@ -78,13 +82,13 @@ export default {
 #app .logo-rounded {
   border-radius: 0 20px 20px 0;
 }
-#app footer {
-  font-size: 11px;
-  max-height: 80px !important;
-}
 #app .mobile {
   font-size: 8px !important;
 }
+#app footer {
+  font-size: 11px;
+  max-height: 80px !important;
+} 
 #app footer a {
   text-decoration: none;
   font-weight: bold;

@@ -1,6 +1,6 @@
 <template>
   <v-row class="justify-center">
-    <v-col :cols="$vuetify.display.mobile ? 12 : 6">
+    <v-col :cols="$vuetify.display.mobile ? 12 : 4">
       <v-card class="quote text-white mb-5 mx-5 px-5 pt-5 pb-5 font-weight-regular" :class="{ 'text-h6': !$vuetify.display.mobile }" v-if="quote">
         <p class="font-weight-regular mb-4">
           {{ quote.q }}
@@ -53,6 +53,9 @@ export default {
 
 <style>
 #app .quote {
+  position: fixed;
+  right: 10px;
+  bottom: 65px;
   background: rgb(var(--v-theme-secondary)); background: rgba(var(--v-theme-secondary), 0.8);
   border-radius: 10px;
   -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
@@ -60,6 +63,9 @@ export default {
   -ms-animation: fadein 2s; /* Internet Explorer */
   -o-animation: fadein 2s; /* Opera < 12.1 */
   animation: fadein 2s;
+}
+#app .quote p {
+  text-align: left;
 }
 @keyframes fadein {
   from { opacity: 0; }

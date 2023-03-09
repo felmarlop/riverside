@@ -3,9 +3,9 @@
     <v-parallax
       :src="img"
       height="100%"
-      :class="{ 'align-end': $vuetify.display.mobile, 'align-center': !$vuetify.display.mobile }"
+      class="align-center"
     >
-      <quote-view />
+      <quote-view v-if="showQuote" />
     </v-parallax>
   </v-container>
 </template>
@@ -21,6 +21,13 @@ export default {
   name: 'HomeView',
   components: {
     QuoteView
+  },
+  props: {
+    showQuote: {
+      type: Boolean,
+      required: false,
+      default: true
+    }
   },
   data() {
     return {
