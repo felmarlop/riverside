@@ -10,7 +10,7 @@ import { en } from 'vuetify/locale'
 const darkCustom = {
   dark: true,
   colors: {
-    primary: '#000000',
+    primary: '#131313',
     secondary: '#99ddcc',
     error: '#f44336',
     info: '#2196f3',

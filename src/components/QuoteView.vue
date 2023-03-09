@@ -2,8 +2,8 @@
   <v-row>
     <v-spacer />
     <v-col :cols="$vuetify.display.mobile ? 12 : 6">
-      <v-card class="quote text-white text-h6 mb-5 mx-5 px-5 pt-5 pb-5 font-weight-regular" v-if="quote">
-        <p class="text-h6 font-weight-regular mb-4">
+      <v-card class="quote text-white mb-5 mx-5 px-5 pt-5 pb-5 font-weight-regular" :class="{ 'text-h6': !$vuetify.display.mobile }" v-if="quote">
+        <p class="font-weight-regular mb-4">
           {{ quote.q }}
         </p>
         <h4 class="subheading float-right">
@@ -54,6 +54,7 @@ export default {
 
 <style>
 #app .quote {
+  font-size: 14px;
   background: rgb(var(--v-theme-secondary)); background: rgba(var(--v-theme-secondary), 0.8);
   position: fixed;
   bottom: 0;

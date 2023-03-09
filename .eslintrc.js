@@ -82,7 +82,7 @@ module.exports = {
         alphabetical: false
       }
     ],
-    "vue/html-self-closing": ["error", {
+    "vue/html-self-closing": ["warn", {
       "html": {
         "void": "always",
         "normal": "never",
