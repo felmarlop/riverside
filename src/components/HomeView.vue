@@ -64,12 +64,8 @@ export default {
 
 <style>
 #app .v-parallax img {
-  -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
-  -moz-animation: fadein 2s; /* Firefox < 16 */
-  -ms-animation: fadein 2s; /* Internet Explorer */
-  -o-animation: fadein 2s; /* Opera < 12.1 */
   animation: zoom-in 60s ease infinite;
-  transition: opacity 2s ease-in-out;
+  transition: opacity .25s ease-in-out;
 }
 @keyframes zoom-in {
   0% {

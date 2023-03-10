@@ -83,10 +83,10 @@ export default {
   border-radius: 0 20px 20px 0;
 }
 #app .mobile {
-  font-size: 8px !important;
+  font-size: 12px !important;
 }
 #app footer {
-  font-size: 11px;
+  font-size: 12px;
   max-height: 80px !important;
 } 
 #app footer a {

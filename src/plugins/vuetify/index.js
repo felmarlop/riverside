@@ -16,7 +16,7 @@ const darkCustom = {
     info: '#2196f3',
     success: '#319828',
     warning: '#ff9900',
-    overlay: '#373737'
+    overlay: '#707070'
   }
 }
 
