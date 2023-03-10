@@ -5,7 +5,7 @@
       height="100%"
       class="align-center"
     >
-      <quote-view v-if="showQuote" />
+      <quote-view v-show="showQuote" />
     </v-parallax>
   </v-container>
 </template>

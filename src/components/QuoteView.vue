@@ -3,7 +3,7 @@
     <v-col :cols="$vuetify.display.mobile ? 12 : 4">
       <transition>
         <v-card
-          class="quote text-white mb-5 mx-5 px-5 pt-5 pb-5 font-weight-regular rounded"
+          class="quote text-overlay mb-5 mx-5 px-5 pt-5 pb-5 font-weight-regular rounded"
           :class="{ 'text-h6': !$vuetify.display.mobile, 'filled': quote }"
           v-if="quote"
         >
@@ -38,7 +38,7 @@ export default {
   methods: {
    getQuote() {
     const q = sample(QUOTES)
-    if (this.oldQ?.autor == q.author) {
+    if (this.oldQ?.author == q.author) {
       return this.getQuote()
     }
     this.oldQ = q

@@ -57,7 +57,7 @@ export default {
     InitView
   },
   data: () => ({ 
-    loading: false,
+    loading: true,
     logo: Logo,
     logoEagle: LogoEagle,
     showQuote: true,

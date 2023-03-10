@@ -1,4 +1,8 @@
-# riverside
+# NavasSkape frontend with Vue.js
+
+<div align="center">
+  <img src="https://github.com/felmarlop/riverside/blob/master/src/assets/img/logo.png?raw=true" alt="NavasSkape's logo"/>
+</div>
 
 ## Project setup
 ```
