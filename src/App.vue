@@ -1,10 +1,10 @@
 <template>
   <v-app>
     <init-view v-if="loading" />
-    <v-app-bar :height="$vuetify.display.mobile ? 55 : 75" color="primary" v-if="!loading">
+    <v-app-bar height="75" color="transparent" elevation="0" v-if="!loading">
       <v-row class="pl-5">
-        <v-img :src="logoEagle" max-width="45" class="ml-2" v-if="$vuetify.display.mobile" />
-        <v-img :src="logo" max-width="350" class="ml-2" v-else />
+        <v-img :src="logoEagle" max-width="50" class="ml-2" v-if="$vuetify.display.mobile" />
+        <v-img :src="logo" max-width="310" class="ml-2" v-else />
       </v-row>
       <v-spacer />
       <v-btn icon>
@@ -57,7 +57,7 @@ export default {
     InitView
   },
   data: () => ({ 
-    loading: true,
+    loading: false,
     logo: Logo,
     logoEagle: LogoEagle,
     showQuote: true,
@@ -83,10 +83,10 @@ export default {
   border-radius: 0 20px 20px 0;
 }
 #app .mobile {
-  font-size: 12px !important;
+  font-size: 10px !important;
 }
 #app footer {
-  font-size: 12px;
+  font-size: 10px;
   max-height: 80px !important;
 } 
 #app footer a {

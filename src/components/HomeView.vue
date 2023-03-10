@@ -1,5 +1,5 @@
 <template>
-  <v-container fluid class="px-0 pb-0">
+  <v-container fluid class="px-0 pb-0 pt-0">
     <v-parallax
       :src="img"
       height="100%"

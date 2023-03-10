@@ -7,7 +7,7 @@
           :class="{ 'text-h6': !$vuetify.display.mobile, 'filled': quote }"
           v-if="quote"
         >
-          <p class="font-weight-regular mb-4">
+          <p class="font-weight-medium mb-4">
             {{ quote.q }}
           </p>
           <h4 class="subheading float-right">
@@ -60,7 +60,7 @@ export default {
 <style>
 #app .quote {
   position: fixed;
-  bottom: 65px;
+  bottom: 50px;
   right: 10px;
   background: rgb(var(--v-theme-secondary)); background: rgba(var(--v-theme-secondary), 0.8);
   border-radius: 10px;

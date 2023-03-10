@@ -44,6 +44,30 @@ const QUOTES = [
   {
     q: '<< No se ve bien sino con el corazón. Lo esencial es invisible a los ojos >>',
     author: 'El principito, Antoine de Saint-Exupéry'
+  },
+  {
+    q: '<< La felicidad no es algo hecho. Viene de tus propias acciones >>',
+    author: 'Dalai Lama'
+  },
+  {
+    q: '<< Si quieres vivir una vida feliz, átala a una meta, no a una persona o un objeto >>',
+    author: 'Albert Einstein'
+  },
+  {
+    q: '<< La felicidad no depende de lo que tienes o de quién eres. Depende únicamente de lo que piensas >>',
+    author: 'Dale Carnegie'
+  },
+  {
+    q: '<< La gratitud es el mejor antídoto contra la tristeza y la frustración. Practícala todos los días >>',
+    author: 'Martin Seligman'
+  },
+  {
+    q: '<< El bienestar no es algo que se adquiere, sino algo que se cultiva a través de pequeñas acciones diarias >>',
+    author: 'Tal Ben-Shahar'
+  },
+  {
+    q: '<< El optimismo es la fe que conduce al logro >>',
+    author: 'Helen Keller'
   }
 ]
 
