@@ -1,10 +1,17 @@
 <template>
   <v-app>
     <init-view v-if="loading" />
-    <v-app-bar height="75" color="transparent" elevation="0" v-if="!loading">
+    <v-app-bar height="50" color="rgba(var(--v-theme-primary), 0.5)" v-if="!loading">
       <v-row class="pl-5">
-        <v-img :src="logoEagle" max-width="50" class="ml-2" v-if="$vuetify.display.mobile" />
-        <v-img :src="logo" max-width="310" class="ml-2" v-else />
+        <v-hover v-slot="{ props }">
+          <v-img
+            :src="$vuetify.display.mobile ? logoEagle : logo"
+            :max-width="$vuetify.display.mobile ? 40 : 240"
+            class="ml-5 logo"
+            v-bind="props"
+            @click="initAnimation()"
+          />
+        </v-hover>
       </v-row>
       <v-spacer />
       <v-btn icon>
@@ -64,10 +71,16 @@ export default {
     title: APP_TITLE
   }),
   created() {
-    const context = this
-    setTimeout(function() {
-      context.loading = false
-    }, LOADING_TIMEOUT)
+    this.initAnimation()
+  },
+  methods: {
+    initAnimation() {
+      this.loading = true
+      const context = this
+      setTimeout(function() {
+        context.loading = false
+      }, LOADING_TIMEOUT)
+    }
   }
 }
 </script>
@@ -81,6 +94,9 @@ export default {
 }
 #app .logo-rounded {
   border-radius: 0 20px 20px 0;
+}
+#app .logo {
+  cursor: pointer;
 }
 #app .mobile {
   font-size: 10px !important;
