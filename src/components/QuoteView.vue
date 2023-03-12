@@ -4,7 +4,6 @@
       <transition>
         <v-card
           class="quote text-overlay mb-5 mx-5 px-5 pt-5 pb-5 font-weight-regular rounded"
-          :class="{ 'text-h6': !$vuetify.display.mobile, 'filled': quote }"
           v-if="quote"
         >
           <p class="font-weight-medium mb-4">
@@ -47,10 +46,7 @@ export default {
    setQuote() {
       const context = this
       setInterval(function() {
-        context.quote = null
-        setTimeout(function() {
-          context.quote = context.getQuote()
-        }, 500)
+        context.quote = context.getQuote()
       }, INTERVAL_TIME)
    }
   }
@@ -61,7 +57,7 @@ export default {
 #app .quote {
   position: fixed;
   bottom: 50px;
-  right: 10px;
+  right: 0;
   background: rgb(var(--v-theme-secondary)); background: rgba(var(--v-theme-secondary), 0.8);
   border-radius: 10px;
 }

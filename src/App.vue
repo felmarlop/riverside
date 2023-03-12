@@ -1,7 +1,7 @@
 <template>
   <v-app>
     <init-view v-if="loading" />
-    <v-app-bar height="50" color="rgba(var(--v-theme-primary), 0.5)" v-if="!loading">
+    <v-app-bar height="50" color="rgba(var(--v-theme-primary), 0.4)" elevation="0" v-if="!loading">
       <v-row class="pl-5">
         <v-hover v-slot="{ props }">
           <v-img
@@ -15,7 +15,7 @@
       </v-row>
       <v-spacer />
       <v-btn icon>
-        <v-icon @click="showQuote = !showQuote">
+        <v-icon color="secondary" @click="showQuote = !showQuote">
           {{ showQuote ? 'mdi-message-bulleted' : 'mdi-message-bulleted-off' }}
         </v-icon>
       </v-btn>
@@ -26,7 +26,7 @@
     <v-footer
       color="primary"
       elevation="5"
-      class="font-weight-light text-overlay"
+      class="font-weight-light text-overlay p-0"
       flat
       tile
       v-if="!loading"
@@ -87,7 +87,7 @@ export default {
 
 <style>
 #app {
-  font-family: 'System-ui', sans-serif;
+  font-family: 'System-ui', sans-serif !important;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
