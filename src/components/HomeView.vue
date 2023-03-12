@@ -1,12 +1,13 @@
 <template>
   <v-container fluid class="px-0 pb-0 pt-0">
-    <v-parallax
-      :src="img"
-      height="100%"
-      class="align-end justify-end"
-    >
+    <v-img :src="img" height="100%" cover class="align-end justify-end">
+      <template #placeholder>
+        <div class="d-flex align-center justify-center fill-height">
+          <v-progress-circular color="secondary" indeterminate />
+        </div>
+      </template>
       <quote-view v-show="showQuote" />
-    </v-parallax>
+    </v-img>
   </v-container>
 </template>
 

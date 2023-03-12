@@ -86,7 +86,7 @@ export default {
 </script>
 
 <style>
-#app {
+#app, #app .text-subtitle-2 {
   font-family: 'System-ui', sans-serif !important;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

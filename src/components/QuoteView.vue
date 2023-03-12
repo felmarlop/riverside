@@ -4,7 +4,7 @@
       <v-expand-transition appear>
         <div v-if="quote">
           <v-card
-            class="quote text-overlay mb-5 mx-5 px-5 pt-5 pb-5 font-weight-regular rounded"
+            class="quote text-subtitle-2 text-overlay mb-5 mx-5 px-5 pt-5 pb-5 font-weight-regular rounded"
           >
             <p class="font-weight-medium mb-4" align="left">
               {{ quote.q }}
