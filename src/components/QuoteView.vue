@@ -1,19 +1,20 @@
 <template>
-  <v-row class="justify-center">
+  <v-row justify="end" align="end">
     <v-col :cols="$vuetify.display.mobile ? 12 : 4">
-      <transition>
-        <v-card
-          class="quote text-overlay mb-5 mx-5 px-5 pt-5 pb-5 font-weight-regular rounded"
-          v-if="quote"
-        >
-          <p class="font-weight-medium mb-4">
-            {{ quote.q }}
-          </p>
-          <h4 class="subheading float-right">
-            {{ quote.author }}
-          </h4>
-        </v-card>
-      </transition>
+      <v-expand-transition appear>
+        <div v-if="quote">
+          <v-card
+            class="quote text-overlay mb-5 mx-5 px-5 pt-5 pb-5 font-weight-regular rounded"
+          >
+            <p class="font-weight-medium mb-4" align="left">
+              {{ quote.q }}
+            </p>
+            <h4 class="subheading float-right">
+              {{ quote.author }}
+            </h4>
+          </v-card>
+        </div>
+      </v-expand-transition>
     </v-col>
   </v-row>
 </template>
@@ -46,7 +47,10 @@ export default {
    setQuote() {
       const context = this
       setInterval(function() {
-        context.quote = context.getQuote()
+        context.quote = null
+        setTimeout(function() {
+          context.quote = context.getQuote()
+        }, 1000)
       }, INTERVAL_TIME)
    }
   }
@@ -55,21 +59,6 @@ export default {
 
 <style>
 #app .quote {
-  position: fixed;
-  bottom: 50px;
-  right: 0;
   background: rgb(var(--v-theme-secondary)); background: rgba(var(--v-theme-secondary), 0.8);
-  border-radius: 10px;
-}
-#app .quote.v-enter-active {
-  transition: right 1s ease;
-}
-
-#app .quote.v-enter-from,
-#app .quote.v-leave-to {
-  right: -1000px;
-}
-#app .quote p {
-  text-align: left;
 }
 </style>

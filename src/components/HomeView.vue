@@ -3,7 +3,7 @@
     <v-parallax
       :src="img"
       height="100%"
-      class="align-center"
+      class="align-end justify-end"
     >
       <quote-view v-show="showQuote" />
     </v-parallax>

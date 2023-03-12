@@ -102,7 +102,7 @@ export default {
   font-size: 10px !important;
 }
 #app footer {
-  font-size: 10px;
+  font-size: 11px;
   max-height: 80px !important;
 } 
 #app footer a {
