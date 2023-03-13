@@ -2,9 +2,10 @@
   <v-container fluid class="px-0 pb-0 pt-0">
     <v-img
       :src="img"
-      height="100%"
-      cover
+      :height="imgHeight"
+      :max-height="imgHeight"
       class="align-end justify-end"
+      cover
       @load="onImgLoad"
     >
       <template #placeholder>
@@ -39,6 +40,7 @@ export default {
   data() {
     return {
       images: require.context('@/assets/img/media/', false).keys(),
+      imgHeight: this.getImageWidth(),
       oldImg: null,
       img: null
     }
@@ -55,6 +57,9 @@ export default {
       }
       this.oldImg = name
       return require(`@/assets/img/media/${name}`)
+    },
+    getImageWidth() {
+      return window.innerHeight
     },
     onImgLoad() {
       const context = this

@@ -25,7 +25,6 @@
     </v-layout>
     <v-footer
       color="primary"
-      elevation="5"
       class="font-weight-light text-overlay p-0"
       flat
       tile
