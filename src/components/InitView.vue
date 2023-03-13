@@ -20,6 +20,9 @@ export default {
       logo: Logo
     }
   },
+  created() {
+    this.isLoaded = false
+  },
   methods: {
     onImgLoad() {
       return this.isLoaded = true
@@ -27,3 +30,16 @@ export default {
   }
 }
 </script>
+<style>
+#app .v-row span {
+  animation: fade-in 1s ease;
+}
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+</style>

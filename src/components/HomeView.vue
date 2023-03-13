@@ -1,12 +1,18 @@
 <template>
   <v-container fluid class="px-0 pb-0 pt-0">
-    <v-img :src="img" height="100%" cover class="align-end justify-end">
+    <v-img
+      :src="img"
+      height="100%"
+      cover
+      class="align-end justify-end"
+      @load="onImgLoad"
+    >
       <template #placeholder>
         <div class="d-flex align-center justify-center fill-height">
           <v-progress-circular color="secondary" indeterminate />
         </div>
       </template>
-      <quote-view v-show="showQuote" />
+      <quote-view ref="quoteView" v-show="showQuote" />
     </v-img>
   </v-container>
 </template>
@@ -50,13 +56,22 @@ export default {
       this.oldImg = name
       return require(`@/assets/img/media/${name}`)
     },
+    onImgLoad() {
+      const context = this
+      setTimeout(function() {
+        if (context.$refs?.quoteView) {
+          context.$refs.quoteView.setQuote()
+        }
+      }, 1000)
+    },
     setImageUrl() {
       const context = this
       setInterval(function() {
         context.img = null
-        setTimeout(function() {
-          context.img = context.getImageUrl()
-        }, 0)
+        if (context.$refs?.quoteView) {
+          context.$refs.quoteView.removeQuote()
+        }
+        setTimeout(function() { context.img = context.getImageUrl() })
       }, INTERVAL_TIME)
     }
   }
@@ -64,7 +79,7 @@ export default {
 </script>
 
 <style>
-#app .v-parallax img {
+#app .v-container img {
   animation: zoom-in 60s ease infinite;
   transition: opacity .25s ease-in-out;
 }
