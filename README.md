@@ -2,6 +2,7 @@
 
 <div align="center">
   <img src="https://github.com/felmarlop/riverside/blob/master/src/assets/img/logo.png?raw=true" alt="NavasSkape's logo"/>
+  <a href="https://felmarlop.github.io/navasskape/" target="_blank">See application</a>
 </div>
 
 ## Project setup
