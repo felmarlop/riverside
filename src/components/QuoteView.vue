@@ -20,8 +20,6 @@
 </template>
 
 <script>
-import { sample } from 'lodash'
-
 import { QUOTES } from '@/core/config'
 
 export default {
@@ -29,17 +27,17 @@ export default {
   data() {
     return {
       quote: null,
-      oldQ: null
+      qIndex: 0
     }
   },
   methods: {
     setQuote() {
-      const q = sample(QUOTES)
-      if (this.oldQ?.author == q.author) {
-        this.setQuote()
+      if (this.qIndex == QUOTES.length - 1) {
+        this.qIndex = 0
+      } else {
+        this.qIndex++
       }
-      this.oldQ = q
-      this.quote = q
+      this.quote = QUOTES[this.qIndex]
     },
     removeQuote() {
       this.quote = null

@@ -41,7 +41,7 @@ export default {
     return {
       images: require.context('@/assets/img/media/', false).keys(),
       imgHeight: this.getImageWidth(),
-      oldImg: null,
+      imgIndex: -1,
       img: null
     }
   },
@@ -51,12 +51,15 @@ export default {
   },
   methods: {
     getImageUrl() {
-      const name = sample(this.images).split('/')[1]
-      if (this.oldImg == name) {
-        return this.getImageUrl()
+      let name = null
+      if (this.imgIndex < 0) {
+        name = sample(this.images)
+        this.imgIndex = this.images.indexOf(name)
+      } else {
+        this.imgIndex = (this.imgIndex == this.images.length - 1) ? 0 : this.imgIndex + 1
+        name = this.images[this.imgIndex]
       }
-      this.oldImg = name
-      return require(`@/assets/img/media/${name}`)
+      return require(`@/assets/img/media/${name.split('/')[1]}`)
     },
     getImageWidth() {
       return window.innerHeight
