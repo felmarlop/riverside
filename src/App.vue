@@ -85,8 +85,8 @@ export default {
 </script>
 
 <style>
-#app, #app .text-body-1 {
-  font-family: 'System-ui', sans-serif !important;
+#app, #app .text-body-2 {
+  font-family: 'Roboto', sans-serif !important;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;

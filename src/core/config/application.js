@@ -32,12 +32,20 @@ const QUOTES = [
     author: 'Jean Piaget'
   },
   {
+    q: '<< Las personas sólo cambiamos de verdad cuando nos damos cuenta de las consecuencias de no hacerlo >>',
+    author: 'Mario Alonso Puig'
+  },
+  {
     q: '<< Un optimista ve en cada peligro una oportunidad >>',
     author: 'Winston Churchill'
   },
   {
     q: '<< La vida no consiste en encontrarte, sino en crearte >>',
     author: 'Anónimo'
+  },
+  {
+    q: '<< Para que alguien te tome en serio, primero te tienes que tomar en serio tú >>',
+    author: 'Mario Alonso Puig'
   },
   {
     q: '<< Consulta no a tus miedos, sino a tus sueños >>',
@@ -70,6 +78,26 @@ const QUOTES = [
   {
     q: '<< El optimismo es la fe que conduce al logro >>',
     author: 'Helen Keller'
+  },
+  {
+    q: '<< La mayor parte de nuestras inseguridades y de nuestras desesperanzas no son reales, son aprendidas >>',
+    author: 'Mario Alonso Puig'
+  },
+  {
+    q: '<< Una mente no puede entenderse sin la cultura >>',
+    author: 'Lev Vygotsky'
+  },
+  {
+    q: '<< Eres aquello que haces, no aquello que dices que harás >>',
+    author: 'Carl Jung'
+  },
+  {
+    q: '<< Viajar es una buena forma de aprender y de superar miedos >>',
+    author: 'Luis Rojas Marcos'
+  },
+  {
+    q: '<< La forma de hablarnos a nosotros mismos afecta tremendamente a nuestra manera de relacionarnos con el mundo >>',
+    author: 'Mario Alonso Puig'
   }
 ]
 

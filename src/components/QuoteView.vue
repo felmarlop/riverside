@@ -6,7 +6,7 @@
           <v-card
             class="quote text-body-1 text-secondary mb-5 mx-5 px-5 pt-5 pb-5 font-weight-light rounded"
           >
-            <p class="font-weight-medium mb-4" align="left">
+            <p class="font-weight-light mb-4" align="left">
               {{ quote.q }}
             </p>
             <h4 class="subheading" align="right">
@@ -20,6 +20,8 @@
 </template>
 
 <script>
+import { random } from 'lodash'
+
 import { QUOTES } from '@/core/config'
 
 export default {
@@ -27,7 +29,7 @@ export default {
   data() {
     return {
       quote: null,
-      qIndex: 0
+      qIndex: random(QUOTES.length - 1)
     }
   },
   methods: {
