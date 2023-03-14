@@ -31,8 +31,6 @@
       v-if="!loading"
     >
       <v-col class="text-center" cols="12">
-        <span>Galería de imágenes de Las Navas de la Concepción (Sevilla)</span>
-        <br />
         <span>
           {{ title }} &copy; {{ new Date().getFullYear() }} -
           <a
@@ -43,6 +41,8 @@
             &#64; Félix Martín
           </a>
         </span>
+        <br />
+        <span>Las Navas de la Concepción, Sevilla</span>
       </v-col>
     </v-footer>
   </v-app>
